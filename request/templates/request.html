@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+
+{% block sidebar %}
+<ul>
+    <li><a href="/requests/all">Requests</a></li>
+</ul>
+{% endblock %}
+
+{% block content %}
+
+<html>
+<body>
+<h1>PER{{ request.per_id }}</h1>
+
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;border-color:#bbb;}
+.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#bbb;color:#594F4F;background-color:#E0FFEB;}
+.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#bbb;color:#493F3F;background-color:#9DE0AD;}
+.tg .tg-804w{font-family:Arial, Helvetica, sans-serif !important;;text-align:center;vertical-align:top}
+.tg .tg-yw4l{vertical-align:top}
+</style>
+<table class="tg">
+  <tr>
+    <th class="tg-804w">PER</th>
+    <th class="tg-804w">App Name/Environment</th>
+    <th class="tg-804w">Zone/Compartment</th>
+    <th class="tg-804w">F5 VIP Name</th>
+    <th class="tg-804w">F5 VIP Port</th>
+    <th class="tg-804w">OneConnect</th>
+    <th class="tg-804w">HTTP Compression</th>
+    <th class="tg-804w">Request/Response Logging</th>
+    <th class="tg-804w">LB Method</th>
+    <th class="tg-804w">Monitor</th>
+    <th class="tg-804w">Server (Nodes)</th>
+    <th class="tg-804w">Service Port</th>
+    <th class="tg-804w">SSL FQDN</th>
+    <th class="tg-804w">SSL Renengotiation</th>
+    <th class="tg-804w">SSL Cipher</th>
+    <th class="tg-804w">Mutual Auth (MA)</th>
+    <th class="tg-804w">MA - Client</th>
+    <th class="tg-804w">MA - Server</th>
+    <th class="tg-804w">GTM</th>
+    <th class="tg-804w">Firewall</th>
+  </tr>
+  <tr>
+    <td class="tg-yw4l">{{ request.per_id }}</td>
+    <td class="tg-yw4l">{{ request.ApplicationRequest.app_name }}/{{ request.ApplicationRequest.app_env }}</td>
+    <td class="tg-yw4l">{{ request.ApplicationRequest.compartment }}</td>
+    <td class="tg-yw4l">{{ request.LTMRequest.placehold_ip }}</td>
+    <td class="tg-yw4l">{{ request.LTMRequest.port }}</td>
+    <td class="tg-yw4l">{{ request.LTMRequest.oneconnect }}</td>
+    <td class="tg-yw4l">{{ request.LTMRequest.http_compression }}</td>
+    <td class="tg-yw4l">{{ request.LTMRequest.requestlog}}</td>
+    <td class="tg-yw4l">{{ request.LTMRequest.loadbalance }}</td>
+    <td class="tg-yw4l">{{ request.LTMRequest.healthmon }}</td>
+    <td class="tg-yw4l">{{ request.LTMRequest.AddressSet.IP }}</td>
+    <td class="tg-yw4l">{{ request.LTMRequest.AddressSet.port }}</td>
+    <td class="tg-yw4l">{{ request.SSLRequest.ssl_fqdn }}</td>
+    <td class="tg-yw4l">{{ request.SSLRequest.ssl_req }}</td>
+    <td class="tg-yw4l">{{ request.SSLRequest.ssl_cipher }}</td>
+    <td class="tg-yw4l">{{ request.SSLRequest.mutauth }}</td>
+    <td class="tg-yw4l">{{ request.SSLRequest.ma_client }}</td>
+    <td class="tg-yw4l">{{ request.SSLRequest.ma_srv }}</td>
+    <td class="tg-yw4l">{{ request.GTMRequest.wide_ip }}</td>
+    <td class="tg-yw4l">{{ request.FirewallRequest.fw_id }}</td>
+  </tr>
+</table>
+</body>
+</html>
+
+{% endblock content %}

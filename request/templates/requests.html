@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<html>
+<body>
+  <h1>PER Requests</h1>
+  {% for request in requests %}
+  <div>
+    <h2><a href="/requests/get/{{ request.per_id }}/">PER{{ request.per_id }}</a></h2>
+  </div>
+  {% endfor %}
+</body>
+</html>
+
+{% endblock content %}

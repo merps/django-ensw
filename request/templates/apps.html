@@ -1,0 +1,10 @@
+<html>
+<body>
+  <h1>Application Lists</h1>
+  {% for app in apps %}
+  <div>
+    <h2><a href="/requests/get/{{ app.app_id }}/">{{app.app_name}}</a></h2>
+  </div>
+  {% endfor %}
+</body>
+</html>

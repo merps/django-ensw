@@ -1,0 +1,25 @@
+<style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;border-color:#bbb;}
+.tg td{font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#bbb;color:#594F4F;background-color:#E0FFEB;}
+.tg th{font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#bbb;color:#493F3F;background-color:#9DE0AD;}
+.tg .tg-804w{font-family:Arial, Helvetica, sans-serif !important;;text-align:center;vertical-align:top}
+.tg .tg-yw4l{vertical-align:top}
+</style>
+<table class="tg">
+  <tr>
+    <th class="tg-804w">PER</th>
+    <th class="tg-804w">Application</th>
+    <th class="tg-804w">F5 VIP</th>
+    <th class="tg-804w">SSL Requirements</th>
+    <th class="tg-804w">GTM</th>
+    <th class="tg-804w">Firewall</th>
+  </tr>
+  <tr>
+    <td class="tg-yw4l">{{ request.per_id }}</td>
+    <td class="tg-yw4l">{{ request.ApplicationRequest }}</td>
+    <td class="tg-yw4l">{{ request.LTMRequest }}</td>
+    <td class="tg-yw4l">{{ request.SSLRequest}}</td>
+    <td class="tg-yw4l">{{ request.GTMRequest }}</td>
+    <td class="tg-yw4l">{{ request.FirewallRequest}}</td>
+  </tr>
+</table>
