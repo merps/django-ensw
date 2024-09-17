@@ -1,5 +1,5 @@
 from django.contrib import admin
-import request.models
+import requests.models
 
 # Register your models here.
 
